@@ -23,7 +23,7 @@
     "@angular/platform-browser": "^11.0.3",
     "@angular/platform-browser-dynamic": "^11.0.3",
     "@angular/router": "^11.0.3",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "core-js": "^2.6.11",
     "nodemailer": "^6.4.14",
     "nodemailer-smtp-transport": "^2.7.4",
