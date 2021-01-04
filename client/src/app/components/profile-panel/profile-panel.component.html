@@ -1,5 +1,10 @@
 <aside class="profilePanel"> 
-  <div class="profilePanel__icon" (click)="toggleProfileList()"> {{ avatarAltText }} </div>
+  <div 
+    class="profilePanel__icon"
+    (click)="toggleProfileList()"
+  > 
+    {{ avatarAltText }}
+  </div>
   <div *ngIf="profileListIsOpen" class="profilePanel__list">
     <ul (click)="toggleProfileList()">
       <li routerLink='/profile'>

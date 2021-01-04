@@ -1,4 +1,4 @@
-@import '../../../assets/styles/index.styl'
+@import '../../assets/styles/index.styl'
 
 
 .profilePanel {
@@ -25,32 +25,33 @@
 
   &__list {
     position: absolute
-    top: 44px
+    top: 46px
     right: 0
     z-index: 80
 
     background-color: backgroundColor2
+    border-right: 2px solid colorOfDecorations
 
     &:before, &:after {
       position: absolute
       content: ''
-      top: -3px  
-      width: 10px
+      top: -4px  
+      width: 12px
       height: 2px 
       
       background-color: colorOfDecorations
     }
 
     &:before {
-      right: 8px  
+      right: 4px  
 
-      transform: rotate(40deg)
+      transform: rotate(45deg)
     }
 
     &:after {
-      right: 16px
+      right: 12px
 
-      transform: rotate(-40deg)
+      transform: rotate(-45deg)
     }
 
     & ul {
@@ -63,20 +64,27 @@
       &:before, &:after {
         position: absolute
         content: ''
-        top: 0 
-        right: 0 
         
         background-color: colorOfDecorations
       }
 
       &:before {
-        width: 10px
+        top: 0 
+        right: 0
+        width: calc(100% - 18px)
         height: 2px  
       }
 
       &:after {
-        height: 100%
-        width: 2px  
+        top: -6px 
+        right: 6px 
+        width: 0
+        height: 0
+
+        border-style: solid
+        border-width: 0 8px 8px 8px
+        border-color: transparent transparent backgroundColor2 
+        background-color: transparent
       }
 
       & li {

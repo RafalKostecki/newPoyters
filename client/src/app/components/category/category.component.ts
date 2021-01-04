@@ -16,5 +16,4 @@ export class CategoryComponent implements OnInit {
   ngOnInit() {
     this.uiService.category.subscribe(cat => this.currentCategory = cat)
   }
-
 }

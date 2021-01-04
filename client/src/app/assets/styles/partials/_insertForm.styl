@@ -1,0 +1,85 @@
+.g-insertForm {
+  display: flex
+  justify-content: center
+  margin-bottom: 30px
+  width: 100%
+
+  &__box {
+    display: flex
+    flex-direction: column
+    padding: 20px 15px
+    min-width: 500px
+    max-width: 700px
+
+    @media (max-width: 650px) {
+      min-width: 0
+    }
+
+    &--signInUp {
+      color: fontColor
+    }
+  }
+}
+
+.g-insertFormSubmit {
+  margin: 22px 0 0 0 
+  padding: 12px 10px
+
+  background-color: shadow4
+  color: fontColor4
+  border: none  
+  border-radius: 2px
+  border: none
+  transition: 200ms ease-in-out
+  cursor: pointer
+
+  &:focus {
+    outline: none
+  }
+
+  &:hover {
+    color: colorOfDecorations  
+  }
+}
+
+.g-insertFormInput {
+  position: relative
+  display: flex
+  flex-direction: column
+
+  &__validation {
+    display: flex
+
+    color: warningColor
+    text-transform: lowercase
+  }
+
+  &__label {
+    margin: 13px 0 2px 0
+
+    color: colorOfDecorations
+    font-size: 20px
+    font-weight: 700
+  }
+
+  &__inputField {
+    margin: 0
+    padding: 12px 10px
+
+    background-color: shadow4
+    color: fontColor4
+    border: none  
+    border-radius: 2px
+    border: 2px solid transparent
+    transition: 200ms ease-in-out
+
+    &:active {
+      border: 2px solid transparent
+    }
+
+    &:focus {
+      outline: none
+      border: 2px solid colorOfDecorations
+    }
+  }
+}

@@ -1,0 +1,53 @@
+vendor(prop, args)
+  -webkit-{prop} args
+  -moz-{prop} args
+  {prop} args
+border-radius()
+  vendor('border-radius', arguments)
+box-shadow()
+  vendor('box-shadow', arguments)
+filter()
+  vendor('filter', arguments)
+txt(size, spaceL, weight, transformT, colorT)
+  font-size size
+  letter-spacing spaceL
+  font-weight weight
+  text-transform transformT
+  color colorT
+@keyframes menuShow
+  0%
+    height 0
+    opacity 0
+  40%
+    height 180px
+    opacity 0
+  100%
+    height 180px
+    opacity 1
+menuFlex()
+  .menu
+    height auto
+    float left
+    width 84%
+    margin 30px 8% 30px 8%
+    &__btn
+      height 30px
+      visibility visible
+      & ul
+        margin 0 auto
+        padding 0
+        float left
+        height 0
+        opacity 0
+        font-size 1px
+        pointer-events none
+        &.media
+          float right
+          & li
+            border-radius 50%
+   	        margin 0px 15px 5px 15px
+            font-size 4px
+        & li
+          display block
+          clear both
+          margin 10px 15px 10px 15px

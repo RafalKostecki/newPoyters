@@ -13,8 +13,8 @@ import { UiService } from '../../services/ui.service';
 @Injectable()
 export class PortfolioComponent implements OnInit {
 
-  public portfolioProjects: Object;
-  private categoryName: string = "Portfolio";
+  public portfolioProjects;
+  private categoryName = "Portfolio";
 
   constructor(private http: HttpClient, private data: UiService) {
     this.getJSON().subscribe(data => {
@@ -27,6 +27,6 @@ export class PortfolioComponent implements OnInit {
   }
 
   public getJSON(): Observable<any> {
-    return this.http.get("../assets/data/portfolio.json")
+    return this.http.get("./app/assets/data/portfolio.json")
   }
 }

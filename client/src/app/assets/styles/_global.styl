@@ -1,0 +1,107 @@
+@import './partials/_insertForm'
+@import './partials/_smallBoxImg'
+@import './partials/_productTile'
+
+html, body {
+  position: relative
+  width: 100%
+  max-width: 100vw
+  height: 100%
+  margin: 0
+  padding: 0
+  overflow-x: hidden
+
+  font-family: 'Montserrat', sans-serif;
+  background backgroundColor
+  color: fontColor4
+  line-height: 1.5
+}
+
+for num in (1..6) {
+  h{num} {
+    margin: 0 0 10px 0
+
+    font-size: (36 - num*4)px
+    line-height: (36 - num*4)px
+    font-family: inherit
+    font-weight: bold
+  }
+}
+a:link, a:visited {
+  text-decoration: inherit
+  color: inherit
+  cursor: pointer
+}
+
+.g-pageWrapper {
+  display: flex
+  flex-direction: column
+  margin: 35px 15% 0 15%
+  box-sizing: border-box
+  clear: both
+
+  @media (max-width: 1300px) and (min-width: 610px) {
+    margin: 15px 7% 0 7%
+  }
+
+  @media (max-width: 610px) {
+    margin: 0 2%
+    margin: 15px 2% 0 2%
+  }
+}
+
+.g-componentWrapper {
+  display: flex
+  flex-direction: column
+  width: 100vw
+}
+
+.g-apiMessage {
+  display: flex
+  justify-content: center
+  align-items: center
+  margin-bottom: 30px
+  padding: 0 30px
+
+  txt(16px, 2px, 700, uppercase, warningColor)
+  text-align: center
+}
+
+.g-exitBtn {
+	display: flex
+	position: relative
+	width: 14px
+	height: 14px
+
+  &--menu {
+    margin-top: -1px
+    margin-left: 3px
+  }
+
+	&:hover {
+		&:before, &:after {
+			background-color: colorOfDecorations1
+		}
+	}
+
+	&:before, &:after {
+		position: absolute
+		content: ''
+		top: 50%
+		left: 0
+		width: calc(100% + 2px)
+		height: 2px
+
+		transition: 200ms ease-in-out
+		background-color: colorOfDecorations
+	}
+
+	&:before {
+		transform: rotate(-45deg)
+	}
+
+	&:after {
+		transform: rotate(45deg)
+	}
+}
+

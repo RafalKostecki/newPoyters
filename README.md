@@ -1,5 +1,5 @@
 # Poyters
-Poyters is my own brand single page application. I hand-coded it in the newest Angular version. Provides easy inject presentation data mechanism. Poyters web app provides nice and easy space for custom users where they can find the best of my projects (mainly games). Also business newcomers find here something for them like my Portfolio.
+[Poyters](https://poyters.pl) is my own brand single page application. I hand-coded it in the newest Angular version and Nest.js. It provides an easy data presentation mechanism and Poyters Account functionalities (sign in/up etc).
 
 ## Set up
 To set up a whole project (including API) at first, u need to `git clone` Poyters repository and than go to main dir and run `npm install` command to get all API packages. You have to do the same at /client directory to get Poyters client packages. To run both (API and client) need to run `npm start` command at specific directory - main for API and /client for client side of the project.
@@ -7,7 +7,22 @@ To set up a whole project (including API) at first, u need to `git clone` Poyter
 
 ## Changelog
 
-### Version 1.3.1 (4 November 2020)
+### Version 1.4.0 (04 January 2021)
+- Create profile view connected to DB
+- Add to User model created date
+- Fix floating credits footer at /contact page
+- Add base informations to contact form
+- Create base product template view
+- Create /kostek-urodziny separate view for Kostek "Urodziny" RPG game
+- Redesign user profile menu
+- Create Stella product separate view
+- Fix views changing flashes
+- Replace Google Disc by Poyters FTP server at downloading Kostek "Urodziny" game
+- Add user role to Poyters Account
+-Create Product Slider and create it to Kostek Urodziny game
+
+
+### Version 1.3.1 (04 November 2020)
 - Clear contact form after sending email
 - Clear signup form after succesfully registration
 - Center horizontally and vertically apiMessage text
@@ -15,7 +30,7 @@ To set up a whole project (including API) at first, u need to `git clone` Poyter
 - Fix contact for email validation overflow
 
 
-### Version 1.3.0 (4 November 2020)
+### Version 1.3.0 (04 November 2020)
 - Create contact form
 - Delete /diary page
 - Add Project Stella to /home and /portfolio
@@ -38,7 +53,7 @@ To set up a whole project (including API) at first, u need to `git clone` Poyter
 - Redesign login panel
 
 
-### Version 1.1.0 (1 March 2020)
+### Version 1.1.0 (01 March 2020)
 - If user is logged, he cannot go to /signin or /signup
 - User can log in and log out and create Poyters account
 - Protect JWT by http-only cookie
@@ -51,7 +66,7 @@ To set up a whole project (including API) at first, u need to `git clone` Poyter
 - Turn off alerts
 
 
-### Version 1.0.0 (8 January 2020)
+### Version 1.0.0 (08 January 2020)
 - Rewrite Data service
 - Close menu after change page (mobile)
 - Redesign project architecture

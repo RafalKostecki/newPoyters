@@ -1,0 +1,8 @@
+{
+  "hex": {
+    "url": "https://hex.pm/api/packages"
+  },
+  "npm": {
+    "url": "https://api.npmjs.org"
+  }
+}

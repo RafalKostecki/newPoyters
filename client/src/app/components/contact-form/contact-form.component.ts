@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import formsConfig from '../../../assets/configs/formsConfig.json';
-import apiConfig from '../../../assets/configs/apiConfig.json';
+import formsConfig from '../../assets/configs/formsConfig.json';
+import apiConfig from '../../assets/configs/apiConfig.json';
 import { corsHeaders } from '../../scripts/auth/connectOptions';
 
 

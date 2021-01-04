@@ -1,0 +1,32 @@
+[
+	{
+		"image": "./app/assets/media/stella.png",
+		"internalLink": "/stella",
+		"title": "Stella",
+		"content": "Library providing implementations of the most famous algorithms, data structures and math functions for Elixir`s projects."
+	},
+  {
+		"image": "./app/assets/media/breadHunter4.png",
+		"externalLink": "https://breadhunter4.poyters.pl",
+		"title": "Bread Hunter 4",
+		"content": "Bread Hunter 4 it`s unusual, dynamic browser arcade game. Your task is to pick up required amount of loaf of breads in the shortest time. To final score are included your time, lives and buffs usage! Also, you have to be careful. Katl Cashier will try to break your plans. But remember! Always, you can throw away bottle of banana juice, it ought to stop her for a while."
+	},
+	{
+		"image": "./app/assets/media/hj3k.mp4",
+		"externalLink": "https://github.com/RafalKostecki/hj3000",
+		"title": "HIPER JUMPER 3000",
+		"content": "HIPER JUMPER 3000 is arcade game where you have to gain every points in the shortest time and go through all boards. You can choose  levels. The game is available for one or two players. Check out who will win!"
+	},
+	{
+		"image": "./app/assets/media/spacenewcomers.mp4",
+		"externalLink": "https://spacenewcomers.poyters.pl",
+		"title": "Space Newcomers",
+		"content": "Space newcomers it`s Poyters version of famous game - Space Invaders created by Taito Corporation. Your mission is destroy as much enemy invaders as you can. The aim is to carefully get a huge bonus for destroying the mother ship. The game is responsive! Right now, you can play on a small or large screen, tablet and TV!"
+	},
+	{
+		"image": "./app/assets/media/kostekUro.mp4",
+		"internalLink": "/kostek-urodziny",
+		"title": "Kostek 'Urodziny'",
+		"content": "We have the birthday and BUM! The huge cristal, a weird rooms, hemoglobine and Przemek! I don`t know how but Kostek`s party has become some kind of apogee! Possible it`s caused by the cheap wine or very strong tea. Nevermind. You have to find your collegues. Don`t worry, always correct and nice smelling Narrator will help ya."
+	}
+]

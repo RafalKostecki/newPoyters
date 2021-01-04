@@ -1,0 +1,56 @@
+@import '../../../assets/styles/index.styl'
+
+.productGet {
+  display: flex
+  flex-direction: column
+  position: relative
+  flex-wrap: nowrap
+  margin-top: 30px
+  padding: 40px
+
+  background-color: shadow4
+
+  @media (max-width: 650px) {
+    flex-direction: column
+    padding: 20px
+  }
+
+  &__title {
+    display: flex
+    flex-direction: column 
+    margin-bottom: 15px
+
+    txt(20px, 0, 600, none, inherit)
+  }
+
+  &__description {
+    display: flex
+    margin-bottom: 20px
+  
+    txt(16px, 0, 400, none, inherit)
+  }
+}
+
+.getButton {
+  display: flex
+  flex-direction: column
+  align-items: center
+  
+  &__item {
+    max-width: 300px
+    padding: 5px 15px
+
+    border: 2px solid transparent
+    border-radius: 2px
+    background-color: colorOfDecorations1
+    txt(20px, 1px, 700, uppercase, inherit)
+    transition: 200ms ease-in-out
+    cursor: pointer
+    color: colorOfDecorations !important
+
+    &:hover {
+      background-color: transparent
+      border: 2px solid colorOfDecorations
+    }
+  }
+}

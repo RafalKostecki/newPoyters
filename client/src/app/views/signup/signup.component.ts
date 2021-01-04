@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { UiService } from '../../services/ui.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MustMatch } from '../../scripts/must-match.validadator';
+import { mustMatch } from '../../scripts/mustMatch.validadator';
 import { corsHeaders } from '../../scripts/auth/connectOptions';
-import formsConfig from '../../../assets/configs/formsConfig.json';
-import apiConfig from '../../../assets/configs/apiConfig.json';
+import formsConfig from '../../assets/configs/formsConfig.json';
+import apiConfig from '../../assets/configs/apiConfig.json';
+import { Router } from '@angular/router';
+import { InfoPopupService } from '../../services/info-popup.service';
+import infoConfig from '../../assets/configs/infoConfig.json';
 
 
 @Component({
@@ -20,7 +23,12 @@ export class SignupComponent implements OnInit {
   public signupMessage: string;
   public signupConfig = formsConfig.signup;
 
-  constructor(private formBuilder: FormBuilder, private data: UiService) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private data: UiService,
+    private router: Router,
+    private infoPopupService: InfoPopupService
+  ) { }
 
   ngOnInit() {
     this.data.changeCategory(this.categoryName);
@@ -38,7 +46,7 @@ export class SignupComponent implements OnInit {
       ]],
       confirmPassword: ['', Validators.required]
     }, {
-        validator: MustMatch('password', 'confirmPassword')
+        validator: mustMatch('password', 'confirmPassword')
     });
   }
 
@@ -69,10 +77,11 @@ export class SignupComponent implements OnInit {
       if (responseJSON.status === 409) {
         this.signupMessage = "User already exists!";
       } else {
-        this.signupMessage = "Account sucessfully created. Now, you can sign in";
-
         this.submitted = false;
         this.registerForm.reset();
+        this.infoPopupService.setIsActive(true);
+        this.infoPopupService.setInfoContent(infoConfig.messages.signup);
+        this.router.navigate(['/signin']);
       }
     })
     .catch(() => {

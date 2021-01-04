@@ -23,14 +23,14 @@ import {trigger, state, style, transition, animate, keyframes } from '@angular/a
     ])
   ]
 })
+
 export class AlertComponent {
+  constructor() { }
 
   @Input() message: string;
   @Input() alertType: string;
 
   public state: string = 'open';
-
-  constructor() { }
 
   hideAlert() {
     this.state = 'close';

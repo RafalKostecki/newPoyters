@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
 import { corsHeaders } from '../../scripts/auth/connectOptions';
-import apiConfig from '../../../assets/configs/apiConfig.json';
+import apiConfig from '../../assets/configs/apiConfig.json';
+import { InfoPopupService } from '../../services/info-popup.service';
+import infoConfig from '../../assets/configs/infoConfig.json';
 
 
 @Component({
@@ -17,7 +19,8 @@ export class ProfilPanelComponent {
 
   constructor(
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    private infoPopupService: InfoPopupService
   ) { }
 
   ngOnInit() {
@@ -42,6 +45,8 @@ export class ProfilPanelComponent {
     .then(res => {
       if (res.status === 200) {
         this.userService.setUserData(null);
+        this.infoPopupService.setIsActive(true);
+        this.infoPopupService.setInfoContent(infoConfig.messages.logout);
         this.router.navigate(['']);
       }
     })

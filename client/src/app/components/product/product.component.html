@@ -1,0 +1,35 @@
+<product-introduction
+  [name]="product.intro.name"
+  [type]="product.intro.type"
+  [introDescription]="product.intro.desc"
+  [icon]="product.intro.iconPath"
+> </product-introduction>
+<app-slider
+  *ngIf="product.slider"
+  [slides]="product.slider"
+></app-slider>
+<product-get
+  *ngIf="product.get"
+  [title]="product.get.title"
+  [buttonText]="product.get.buttonText"
+  [description]="product.get.description"
+  [type]="product.get.type"
+  [address]="product.get.address"
+> </product-get>
+<div class="boxesWrapper">
+  <product-system-requirements
+    *ngIf="product.requirements"
+    [min]="product.requirements.min"
+    [rec]="product.requirements.recommended"
+  > </product-system-requirements>
+
+  <product-details
+    [details]="product.details"
+    [package]="product.package"
+  > </product-details>
+
+  <product-links
+    *ngIf="product.links"
+    [links]="product.links"
+  > </product-links>
+</div>

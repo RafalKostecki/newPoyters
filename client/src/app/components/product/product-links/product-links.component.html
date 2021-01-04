@@ -1,0 +1,14 @@
+<article class="g-productTile">
+  <header class="g-productTile__title">
+    Product links
+  </header>
+
+  <section class="g-productTile__list">
+    <ul>
+      <li *ngFor="let tag of links">
+        <span class="g-listTagTitle">{{tag.title}}:</span> 
+        <a target="blank" [href]="tag.content"> {{tag.content}} </a>
+      </li>
+    </ul>
+  </section>
+</article>

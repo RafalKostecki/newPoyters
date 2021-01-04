@@ -16,17 +16,20 @@ export class HomeComponent implements OnInit {
   public projects: Object;
   private categoryName: string = "Home";
 
-  constructor(private http: HttpClient, private data: UiService) {
+  constructor(
+    private http: HttpClient,
+    private uiService: UiService
+  ) {
     this.getJSON().subscribe(
       data => this.projects = data
     );
   }
 
   ngOnInit() {
-    this.data.changeCategory(this.categoryName)
+    this.uiService.changeCategory(this.categoryName);
   }
 
   public getJSON(): Observable<any> {
-    return this.http.get("../assets/data/projects.json")
+    return this.http.get("./app/assets/data/projects.json")
   }
 }

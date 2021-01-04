@@ -1,4 +1,4 @@
-@import '../../../assets/styles/index.styl'
+@import '../../assets/styles/index.styl'
 
 .contact {
   display: flex
@@ -60,5 +60,19 @@
 
   &__form {
     flex: 1  
+  }
+}
+
+.contactIntroduction {
+  display: flex  
+  flex-direction: column
+  margin-bottom: 30px;
+
+  & p {
+    txt(18px, 1px, 400, none, inherit)  
+
+    @media (max-width: 610px) {
+      txt(16px, 0, 400, none, inherit)  
+    }
   }
 }

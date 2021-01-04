@@ -1,0 +1,29 @@
+<article class="slider">
+  <aside 
+    class="slider__prev"
+    (click)="prev()"
+  > </aside>
+  <aside 
+    class="slider__next"
+    (click)="next()"
+  > </aside>
+  <section class="slider__slides">
+    <div class="sliderTape" [style]="tapeStyles" id="sliderTape">
+      <div 
+        class="slide"
+        *ngFor="let slide of slides"
+        [style.background-image]="'url(' + slide.mediaPath + ')'"
+      > </div>
+    </div>
+  </section>
+  <nav class="slider__pagination">
+    <ul>
+      <li 
+        *ngFor="let slide of slides; let i = index"
+        [class.activeTab]="i === currentSlide"
+      >
+        {{ i + 1}}
+      </li>
+    </ul>
+  </nav>
+</article>

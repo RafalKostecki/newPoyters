@@ -1,0 +1,27 @@
+<article class="g-productTile">
+  <header class="g-productTile__title">
+    System requirements
+  </header>
+
+  <section class="g-productTile__list">
+    <header class="g-productListHeader">
+      MINIMUM
+    </header>
+    <ul>
+      <li *ngFor="let tag of min">
+        <span class="g-listTagTitle">{{tag.title}}:</span> {{tag.content}}
+      </li>
+    </ul>
+  </section>
+
+  <section class="g-productTile__list">
+    <header class="g-productListHeader">
+      Recommended
+    </header>
+    <ul>
+      <li *ngFor="let tag of rec">
+        <span class="g-listTagTitle">{{tag.title}}:</span> {{tag.content}}
+      </li>
+    </ul>
+  </section>
+</article>

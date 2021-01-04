@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { UserService } from './services/user.service';
 import { corsHeaders } from './scripts/auth/connectOptions';
-import apiConfig from '../assets/configs/apiConfig.json';
-import { IUserData } from './interfaces/userData.interface';
+import apiConfig from './assets/configs/apiConfig.json';
 
 
 @Component({
@@ -28,7 +27,7 @@ export class AppComponent {
 
   ngOnInit() {
     this.userService.userData.subscribe(data => {
-      this.userId = data?.id
+      this.userId = data?._id
     })
 
     fetch(`${apiConfig.poytersApiUrl}/users/profile/`,
@@ -39,15 +38,7 @@ export class AppComponent {
       })
     .then(res => res.json())
     .then(resJSON => {
-      
-      const userData: IUserData = {
-        id: resJSON.userId,
-        username: resJSON.username
-      }
-      
-      if (resJSON.userId) {
-        this.userService.setUserData(userData);
-      }
+      if (resJSON._id) this.userService.setUserData(resJSON);
     });
   }
 

@@ -1,3 +1,8 @@
-<p>
-  Profile page is not available yet
-</p>
+<main class="g-pageWrapper">
+  <app-user-profile
+    [username]="userData.username"
+    [mail]="userData.mail"
+    [created]="userData.created"
+    [role]="userData.role"
+  > </app-user-profile>
+</main>

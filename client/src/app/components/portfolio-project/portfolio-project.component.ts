@@ -7,6 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 
 export class PortfolioProjectComponent {
+  constructor() { }
 
   @Input() type: string;
   @Input() image: string;
@@ -16,7 +17,5 @@ export class PortfolioProjectComponent {
   @Input() technologies: Array<string>;
   @Input() date: string;
   @Input() githubLink: string;
-
-  constructor() { }
 
 }

@@ -1,0 +1,121 @@
+@import '../../assets/styles/index.styl'
+
+
+.slider {
+  display: flex
+  flex-direction: column
+  box-sizing: border-box
+  width: 100%
+  max-width: 100%
+  position: relative
+  margin-top: 30px
+  overflow: hidden
+
+  &__prev, &__next {
+    position: absolute
+    width: 30px
+    height: 30px
+    top: calc(50% - 18px)
+    z-index: 99
+
+    border-style: solid
+    border-width: 6px 6px 0 0
+    border-color: colorOfDecorations
+    cursor: pointer
+    transition: 200ms ease-in-out
+
+    &:hover {
+      border-color: colorOfDecorations1
+    }
+  }
+
+  &__prev {
+    left: 7px
+    transform: rotate(-145deg)
+  }
+
+  &__next {
+    right: 7px
+    transform: rotate(45deg)
+  }
+
+  &__slides {
+    display: flex
+    height: 400px
+
+    background-color: shadow4
+  }
+
+  &__pagination {
+    display: flex 
+    margin-top: 10px 
+
+    & ul {
+      display: flex
+      width: 100%
+      flex-direction: row
+      flex-wrap: nowrap
+      margin: 0
+      padding: 0 
+      justify-content: center
+
+      list-style-type: none
+
+      & li {
+        display: flex
+        flex: 1
+        margin: 5px 10px
+        height: 10px
+        max-width: 80px
+        justify-content: center
+        align-items: center
+
+        cursor: pointer
+        transition: 200ms ease-in-out
+        border: 2px solid transparent
+        border-radius: 2px
+        background-color: colorOfDecorations1
+        txt(12px, 0, 700, uppercase, colorOfDecorations)
+
+        &:hover, &.activeTab {
+          background-color: transparent
+          border: 2px solid colorOfDecorations
+        }
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        @media (max-width: 610px) {
+          margin: 5px
+        }
+      }  
+    }
+  }
+}
+
+.slide {
+  display: flex
+  min-width: 100%
+  box-sizing: border-box
+  height: 400px 
+
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: center
+}
+
+.sliderTape {
+  display: flex 
+  flex-direction: row
+  flex-wrap: nowrap
+  position: absolute
+  width: 100%
+  height: 100%
+
+  transition: 300ms ease-in-out
+}

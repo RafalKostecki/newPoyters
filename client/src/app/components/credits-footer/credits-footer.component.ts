@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UiService } from '../../services/ui.service';
 
 @Component({
   selector: 'app-credits-footer',
@@ -8,18 +7,10 @@ import { UiService } from '../../services/ui.service';
 })
 export class FooterComponent implements OnInit {
 
+  constructor() { }
+
   public currentYear: number = new Date().getFullYear();
-  public currentCategory: string;
 
-  constructor(private uiService: UiService) { }
-
-  ngOnInit() {
-    this.uiService.category.subscribe(cat => this.currentCategory = cat)
-  }
+  ngOnInit() { }
   
-  get footerStyles () {
-		return {
-      position: this.currentCategory === 'Contact' ? 'fixed' : 'relative'
-    }
-  };
 }

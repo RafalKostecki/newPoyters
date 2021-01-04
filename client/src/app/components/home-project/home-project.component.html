@@ -1,24 +1,54 @@
+<ng-template #mediaData>
+  <img src={{image}} *ngIf="!image.includes('.mp4')"/>
+  <video
+    *ngIf="image.includes('.mp4')"
+    loop
+    [muted]="true"
+    playsinline
+    width="100%"
+    height="100%"
+    preload="auto"
+    autoplay
+  >
+    <source 
+      src={{image}}
+      type="video/mp4"
+    > 
+  </video>
+</ng-template>
+
+
 <section class="homeProject">
-  <a target="blank" href={{link}} role="img" class="homeProject__img">
-    <img src={{image}} *ngIf="!image.includes('.mp4')"/>
-    <video
-      *ngIf="image.includes('.mp4')"
-      loop
-      [muted]="true"
-      playsinline
-      width="100%"
-      height="100%"
-      preload="auto"
-      autoplay
-    >
-      <source 
-        src={{image}}
-        type="video/mp4"
-      > 
-    </video>
+  <a 
+    *ngIf="externalLink"
+    target="blank"
+    href={{externalLink}}
+    role="img"
+    class="homeProject__img"
+  >
+    <ng-container 
+      *ngTemplateOutlet="mediaData">
+    </ng-container>
+
   </a>
+
+  <a 
+    *ngIf="internalLink"
+    routerLink={{internalLink}}
+    role="img"
+    class="homeProject__img"
+  >
+    <ng-container 
+      *ngTemplateOutlet="mediaData">
+    </ng-container>
+  </a>
+
   <div class="homeProject__desc">
     <h2> {{ title }} </h2>
     <p> {{content}} </p>
   </div>
+<<<<<<< HEAD
 </section>
+=======
+</section>
+>>>>>>> release-1.4.0

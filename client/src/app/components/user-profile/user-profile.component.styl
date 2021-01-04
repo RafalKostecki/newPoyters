@@ -1,0 +1,44 @@
+@import '../../assets/styles/index.styl'
+
+
+.userProfile {
+  display: flex
+  flex-direction: column
+  padding: 30px 20px
+
+  background-color: shadow4
+
+  &__info {
+    text-transform: lowercase
+
+    & span {
+      txt(12px, 2px, bold, none, inherit)  
+    }
+  }
+}
+
+.userMainData {
+  display: flex
+  flex-direction: column
+  flex-wrap: nowrap
+
+  &__role {
+    txt(12px, 0, 700, uppercase, colorOfDecorations)
+  }
+
+  &__username {
+    letter-spacing: 2px
+
+    @media (max-width: 650px) {
+      text-align: center
+    }
+  }
+
+  &__mail {
+    color: fontColor3
+
+    @media (max-width: 650px) {
+      text-align: center
+    }
+  }
+}

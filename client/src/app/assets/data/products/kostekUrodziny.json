@@ -1,0 +1,112 @@
+{
+  "intro": {
+    "name": "Kostek \"Urodziny\"",
+    "type": "rpg game",
+    "desc": "We have the birthday and BUM! The huge cristal, a weird rooms, hemoglobine and Przemek! I don`t know how but Kostek`s party has become some kind of apogee! Possible it`s caused by the cheap wine or very strong tea. Nevermind. You have to find your collegues. Don`t worry, always correct and nice smelling Narrator will help ya.",
+    "iconPath": "./app/assets/media/kosBirthday.png"
+  },
+  "slider": [
+    {
+      "mediaPath": "./app/assets/media/kosBirthday.png", 
+      "type": "IMAGE",
+      "alt": "Kostek Urodziny - A magical crystal"
+    },
+    {
+      "mediaPath": "./app/assets/media/kosBirthday1.png", 
+      "type": "IMAGE",
+      "alt": "Kostek Urodziny - Wawel Castle"
+    },
+    {
+      "mediaPath": "./app/assets/media/kosBirthday2.png", 
+      "type": "IMAGE",
+      "alt": "Kostek Urodziny - A freaky room"
+    },
+    {
+      "mediaPath": "./app/assets/media/kosBirthday3.png", 
+      "type": "IMAGE",
+      "alt": "Kostek Urodziny - Toilet"
+    }
+  ],
+  "get": {
+    "title": "Download game",
+    "description": "It's really happens! Kostek \"Urodziny\" game is completly for free! The promotion is limited in time!",
+    "buttonText": "download",
+    "address": "https://poyters.pl/assets/uploads/kostek.exe"
+  },
+  "requirements": {
+    "min": [
+      {
+        "title": "OS",
+        "content": "Windows XP"
+      },
+      {
+        "title": "Processor",
+        "content": "1.2Ghz"
+      },
+      {
+        "title": "Memory",
+        "content": "1024 MB RAM"
+      },
+      {
+        "title": "Graphics",
+        "content": "512 MB"
+      },
+      {
+        "title": "Storage",
+        "content": "550 MB available space"
+      }
+    ],
+    "recommended": [
+      {
+        "title": "OS",
+        "content": "Windows 7"
+      },
+      {
+        "title": "Processor",
+        "content": "2.4Ghz"
+      },
+      {
+        "title": "Memory",
+        "content": "2048 MB RAM"
+      },
+      {
+        "title": "Graphics",
+        "content": "1024 MB"
+      },
+      {
+        "title": "Storage",
+        "content": "700 MB available space"
+      }
+    ]
+  },
+  "details": [
+    {
+      "title": "Type",
+      "content": "RPG game"
+    },
+    {
+      "title": "Languages",
+      "content": "PL"
+    },
+    {
+      "title": "Single-player",
+      "content": "Yes"
+    },
+    {
+      "title": "Online Co-op",
+      "content": "No"
+    },
+    {
+      "title": "Controller support",
+      "content": "No"
+    },
+    {
+      "title": "Released",
+      "content": "01.07.2015"
+    },
+    {
+      "title": "Last update",
+      "content": "12.09.2015"
+    }
+  ]
+}

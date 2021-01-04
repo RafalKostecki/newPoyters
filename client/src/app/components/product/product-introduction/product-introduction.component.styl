@@ -1,0 +1,61 @@
+@import '../../../assets/styles/index.styl'
+
+.productIntroduction {
+  display: flex
+  flex-direction: row
+  position: relative
+  flex-wrap: nowrap
+  padding: 40px
+
+  background-color: shadow4
+
+  @media (max-width: 650px) {
+    flex-direction: column
+    padding: 20px
+  }
+
+  &__icon {
+    display: flex
+    flex-flow: row nowrap
+    align-items: center
+    padding: 10px 0 10px 20px
+    min-width: 200px
+    max-width: 350px
+
+    @media (max-width: 650px) {
+      flex-flow: column
+      margin-top: 40px
+      padding: 0
+      min-width: none
+      max-width: none
+    }
+
+    & img {
+      max-width: 100%
+    }
+  }
+}
+
+.productShortInfo {
+  display: flex
+  flex-direction: column
+
+  &__headers {
+    & h5 { 
+      text-transform: lowercase
+      letter-spacing: 2px
+      color: colorOfDecorations
+    }
+  }
+
+  &__content {
+    display: flex
+    flex-direction: column
+    flex-wrap: nowrap
+    margin-top: 20px
+
+    @media (max-width: 650px) {
+      flex-direction: column
+    }
+  }
+}

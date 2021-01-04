@@ -35,3 +35,9 @@ lerna-debug.log*
 
 # Environment
 *.env
+
+# NPM
+package-lock.json
+
+#Uploads
+kostek.exe

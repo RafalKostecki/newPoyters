@@ -1,0 +1,27 @@
+<article class="userProfile">
+  <header class="userMainData">
+    <span class="userMainData__role"> {{ role }} </span>
+    <h2 class="userMainData__username">
+      {{ username }}
+    </h2>
+    <h5 class="userMainData__mail">
+      {{ mail }}
+    </h5>
+  </header>
+  <section class="userProfile__info">
+    <ul>
+      <li>
+        Registered: 
+        <span> {{ created | date }} </span>
+      </li>
+      <li>
+        Poyters Blog articles:  
+        <span> 0 </span>
+      </li>
+      <li>
+        Support topics:  
+        <span> 0 </span>
+      </li>
+    </ul>
+  </section>
+</article>

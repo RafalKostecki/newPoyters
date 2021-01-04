@@ -1,0 +1,52 @@
+.g-productTile {
+  display: flex
+  flex-direction: column
+  flex-wrap: nowrap
+  margin: 30px 0
+  padding: 40px
+
+  background-color: shadow4
+
+  @media (max-width: 650px) {
+    flex-direction: column
+    padding: 20px
+  }
+
+  &__list {
+    margin-top: 15px;
+
+    & ul {
+      margin: 5px 0 10px 0
+      padding: 0 0 0 15px
+
+      list-style-type: none
+      font-size: 15px
+
+      & a {
+        transition: 200ms ease-in-out
+
+        &:hover {
+          color: colorOfDecorations
+        }  
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 15px 
+
+    txt(20px, 0, 400, none, inherit)
+  }
+}
+
+.g-productListHeader {
+  txt(12px, 2px, 600, uppercase, inherit)
+  color: colorOfDecorations
+}
+
+.g-listTagTitle {
+  margin-right: 3px
+  
+  color: fontColor3
+  font-size: 17px
+}
