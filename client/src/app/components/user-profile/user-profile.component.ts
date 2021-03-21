@@ -9,6 +9,8 @@ export class UserProfileComponent implements OnInit {
   constructor() { }
 
   @Input() username: string;
+  @Input() firstName: string;
+  @Input() lastName: string;
   @Input() mail: string;
   @Input() created: number;
   @Input() role: number;
