@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
 import { corsHeaders } from '../../scripts/auth/connectOptions';
@@ -15,6 +15,8 @@ import { KeycloakService } from 'keycloak-angular';
 })
 export class ProfilPanelComponent {
 
+  @Input() username: string;
+
   public profileListIsOpen = false;
   public avatarAltText: string;
 
@@ -28,7 +30,7 @@ export class ProfilPanelComponent {
   ngOnInit() {
     this.userService.userData.subscribe(data => {
       if (!data?.avatar) {
-        this.avatarAltText = data?.username[0].toUpperCase();
+        this.avatarAltText = this.username?.[0].toUpperCase();
       }
     })
   }

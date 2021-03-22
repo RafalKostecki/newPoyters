@@ -1,7 +1,10 @@
 <!-- If not logged -->
 <app-login-panel *ngIf="!isLoggedIn"></app-login-panel>
 <!-- If logged -->
-<app-profile-panel *ngIf="isLoggedIn"></app-profile-panel>
+<app-profile-panel
+  *ngIf="isLoggedIn && userProfile"
+  [username]="userProfile?.username"
+></app-profile-panel>
 
 <!-- Info popups -->
 <app-info-popup> </app-info-popup>
