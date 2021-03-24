@@ -46,7 +46,7 @@ export class ProfilPanelComponent {
   }
 
   public settings() {
-    window.open('http://localhost:8080/auth/realms/poyters-account/account/', '_blank');
+    window.open('http://localhost:8080/auth/realms/poyters-account/account?refereer=poyters', '_blank');
   }
 
 }
