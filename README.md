@@ -7,8 +7,14 @@ To set up a whole project (including API) at first, u need to `git clone` Poyter
 
 ## Changelog
 
-### Version 1.5.0 (planned 2021)
-- Create offer view
+### Version 1.5.0 (planned April 2021)
+- POY-115, Redesign a whole web app
+- POY-110, Connect to Poyters Account
+- POY-89, Add first and last name
+- POY-62, Add option to change mail
+- POY-60, Add option to change password
+- POY-45, Add option to recover forgotten password
+- POY-12, Add Poyters logo
 
 ### Version 1.4.0 (04 January 2021)
 - Create profile view connected to DB
