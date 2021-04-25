@@ -25,7 +25,6 @@ import * as keycloakConfig from './assets/configs/keycloak.config.json';
 
 
 const accessString = 'mongodb+srv://new-test-user:9OFB838GLJY0h1vx@cluster0-amydc.mongodb.net/test?retryWrites=true&w=majority';
-console.log(keycloakConfig)
 
 @Module({
   imports: [
