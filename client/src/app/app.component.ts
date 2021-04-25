@@ -29,7 +29,6 @@ export class AppComponent {
 
   public async ngOnInit() {
     this.isLoggedIn = await this.keycloak.isLoggedIn();
-    console.log('this.isLoggedIn', this.isLoggedIn)
 
     if (this.isLoggedIn) {
       this.userProfile = await this.keycloak.loadUserProfile();

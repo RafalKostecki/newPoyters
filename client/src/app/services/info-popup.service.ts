@@ -10,7 +10,6 @@ export class InfoPopupService {
   public isActive = new BehaviorSubject<boolean>(false);
 
   public setIsActive(isActive: boolean): void {
-    console.log('setIsActive')
     this.isActive.next(isActive);
   }
 

@@ -1,10 +1,11 @@
 {
   "realm": "poyters-account",
-  "auth-server-url": "http://localhost:8080/auth/",
-  "ssl-required": "external",
+  "authServerUrl": "https://angotia.pl/auth",
+  "sslRequired": "external",
   "resource": "poyters",
-  "public-client": true,
-  "verify-token-audience": true,
-  "use-resource-role-mappings": true,
-  "confidential-port": 0
+  "publicClient": true,
+  "verifyTokenAudience": true,
+  "useResourceRoleMappings": true,
+  "confidentialPort": 0,
+  "checkLoginIframe": false
 }

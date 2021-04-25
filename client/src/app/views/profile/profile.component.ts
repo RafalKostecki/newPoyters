@@ -32,10 +32,6 @@ export class ProfileComponent implements OnInit {
     if (this.isLoggedIn) {
       this.userProfile = await this.keycloak.loadUserProfile();
       this.token = await this.keycloak.getToken();
-      const instance = await this.keycloak.getKeycloakInstance();
-      const info = await instance.loadUserInfo();
-      console.log(info)
-      console.log('userProfile', this.userProfile, this.userProfile.emailVerified);
     }
   }
 

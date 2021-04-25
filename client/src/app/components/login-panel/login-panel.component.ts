@@ -16,9 +16,7 @@ export class LoginPanelComponent {
   ) { }
 
   public async login() {
-    console.log('hererere')
     await this.keycloak.login();
-    console.log('here')
     this.infoPopupService.setIsActive(true);
     this.infoPopupService.setInfoContent(infoConfig.messages.logout);
   }
