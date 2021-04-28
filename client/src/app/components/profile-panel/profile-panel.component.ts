@@ -1,11 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { UserService } from '../../services/user.service';
-import { Router } from '@angular/router';
-import { corsHeaders } from '../../scripts/auth/connectOptions';
-import apiConfig from '../../assets/configs/apiConfig.json';
 import { InfoPopupService } from '../../services/info-popup.service';
 import infoConfig from '../../assets/configs/infoConfig.json';
 import { KeycloakService } from 'keycloak-angular';
+import poytersAccountConfig from '../../assets/configs/poytersAccount.config.json'
 
 
 @Component({
@@ -23,8 +21,7 @@ export class ProfilPanelComponent {
   constructor(
     private userService: UserService,
     private infoPopupService: InfoPopupService,
-    private readonly keycloak: KeycloakService,
-    private router: Router,
+    private readonly keycloak: KeycloakService
   ) { }
 
   ngOnInit() {
@@ -46,7 +43,10 @@ export class ProfilPanelComponent {
   }
 
   public settings() {
-    window.open('https://angotia.pl/auth/realms/poyters-account/account?refereer=poyters', '_blank');
+    window.open(
+      `${poytersAccountConfig.authServerUrl}/realms/poyters-account/account?refereer=poyters`,
+      '_blank'
+    );
   }
 
 }

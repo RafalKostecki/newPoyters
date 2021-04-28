@@ -41,11 +41,11 @@ export class InfoPopupComponent implements OnInit {
     this.infoPopupService.isActive.subscribe(is => {
       this.isActive = is;
 
-      if (is) {
-        setTimeout(() => {
-          this.infoPopupService.setIsActive(false);
-        }, infoConfig.delay)
-      }
+      // if (is) {
+      //   setTimeout(() => {
+      //     this.infoPopupService.setIsActive(false);
+      //   }, infoConfig.delay)
+      // }
     });
     this.infoPopupService.infoContent.subscribe(info => this.content = info);
   }

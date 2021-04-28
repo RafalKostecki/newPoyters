@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import formsConfig from '../../assets/configs/formsConfig.json';
 import apiConfig from '../../assets/configs/apiConfig.json';
 import { corsHeaders } from '../../scripts/auth/connectOptions';
+import { InfoPopupService } from '../../services/info-popup.service';
 
 
 @Component({
@@ -13,14 +14,15 @@ import { corsHeaders } from '../../scripts/auth/connectOptions';
 export class ContactFormComponent implements OnInit {
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private infoPopupService: InfoPopupService
   ) { }
 
   public contactForm: FormGroup;
   public formConfig = formsConfig.contact;
   public submitted = false;
-  public mailStatus: string;
   private sentMailInfo = {
+    pending: 'Sending...',
     ok: 'Your mail has been sent!',
     error: 'Cannot sent mail. Pleas try later'
   }
@@ -57,6 +59,7 @@ export class ContactFormComponent implements OnInit {
     this.submitted = true;
 
     if (this.contactForm.invalid) return;
+    this.infoPopupService.showInfo(this.sentMailInfo.pending, 1500);
 
     const mail = {
       from: `"${this.contactForm.value.email}" <no-reply@poyters.pl>`,
@@ -74,16 +77,16 @@ export class ContactFormComponent implements OnInit {
       })
       .then((res) => {
         if (res.status === 200) {
-          this.mailStatus = this.sentMailInfo.ok;
+          this.infoPopupService.showInfo(this.sentMailInfo.ok, 4000);
           
           this.submitted = false;
           this.contactForm.reset();
         } else {
-          this.mailStatus = this.sentMailInfo.error;
+          this.infoPopupService.showInfo(this.sentMailInfo.error, 2000);
         }
       })
       .catch(() => {
-        this.mailStatus = this.sentMailInfo.error;
+        this.infoPopupService.showInfo(this.sentMailInfo.error, 2000);
       })
   }
 

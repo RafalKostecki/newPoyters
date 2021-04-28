@@ -1,6 +1,6 @@
 {
   "realm": "poyters-account",
-  "authServerUrl": "https://angotia.pl/auth",
+  "authServerUrl": "http://localhost:8080/auth",
   "sslRequired": "external",
   "resource": "poyters",
   "publicClient": true,
