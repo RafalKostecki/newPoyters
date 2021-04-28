@@ -3,11 +3,9 @@ import { UiService } from '../../services/ui.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { mustMatch } from '../../scripts/mustMatch.validadator';
 import { corsHeaders } from '../../scripts/auth/connectOptions';
-import formsConfig from '../../assets/configs/formsConfig.json';
-import apiConfig from '../../assets/configs/apiConfig.json';
+import formsConfig from '../../assets/configs/forms.config.json';
+import poytersApiConfig from '../../assets/configs/poytersApi.config.json';
 import { Router } from '@angular/router';
-import { InfoPopupService } from '../../services/info-popup.service';
-import infoConfig from '../../assets/configs/infoConfig.json';
 
 
 @Component({
@@ -26,8 +24,7 @@ export class SignupComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private data: UiService,
-    private router: Router,
-    private infoPopupService: InfoPopupService
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -65,7 +62,7 @@ export class SignupComponent implements OnInit {
       mail: this.registerForm.value.email,
     };
 
-    fetch(`${apiConfig.poytersApiUrl}/users/create`,
+    fetch(`${poytersApiConfig.url}/users/create`,
       {
         method: 'POST',
         headers: corsHeaders,
@@ -79,8 +76,6 @@ export class SignupComponent implements OnInit {
       } else {
         this.submitted = false;
         this.registerForm.reset();
-        this.infoPopupService.setIsActive(true);
-        this.infoPopupService.setInfoContent(infoConfig.messages.signup);
         this.router.navigate(['/signin']);
       }
     })

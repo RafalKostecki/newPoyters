@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { InfoPopupService } from '../../services/info-popup.service';
-import infoConfig from '../../assets/configs/infoConfig.json';
 import {
   trigger,
   state,
@@ -38,15 +37,7 @@ export class InfoPopupComponent implements OnInit {
   public content: string;
 
   ngOnInit() {
-    this.infoPopupService.isActive.subscribe(is => {
-      this.isActive = is;
-
-      // if (is) {
-      //   setTimeout(() => {
-      //     this.infoPopupService.setIsActive(false);
-      //   }, infoConfig.delay)
-      // }
-    });
+    this.infoPopupService.isActive.subscribe(is => this.isActive = is);
     this.infoPopupService.infoContent.subscribe(info => this.content = info);
   }
 

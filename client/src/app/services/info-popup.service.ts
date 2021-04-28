@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import infoConfig from '../assets/configs/infoConfig.json';
+import infoMessageConfig from '../assets/configs/infoMessage.config.json';
 
 @Injectable({
   providedIn: 'root'
@@ -18,13 +18,12 @@ export class InfoPopupService {
     this.infoContent.next(content);
   }
 
-  public showInfo(content: string, delay?: number): void {
-    console.log(' delay || infoConfig.delay', delay || infoConfig.delay);
+  public showInfoMessage(content: string, delay?: number): void {
     this.isActive.next(true);
     this.infoContent.next(content);
 
     setTimeout(() => {
       this.isActive.next(false);
-    }, delay || infoConfig.delay)
+    }, delay || infoMessageConfig.delay)
   }
 }

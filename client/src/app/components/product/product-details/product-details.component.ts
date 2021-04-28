@@ -3,7 +3,7 @@ import { IProductTagData } from '../../../interfaces/productTagData.interface';
 import { Package } from '../../../models/package.model';
 import { HttpClient } from '@angular/common/http';
 import { originalOrder } from '../../../pipes/orginalOrder.pipe';
-import packageConfig from '../../../assets/configs/packagesConfig.json';
+import packagesConfig from '../../../assets/configs/packages.config.json';
 import { DatePipe } from '@angular/common';
 
 
@@ -55,7 +55,7 @@ export class ProductDetailsComponent implements OnInit {
   ngOnInit(): void {
     switch(this.package?.type) {
       case Package.hex:
-        const apiLink = `${packageConfig.hex.url}/${this.package.name}`
+        const apiLink = `${packagesConfig.hex.url}/${this.package.name}`
 
         this.http.get(apiLink).subscribe((data: any) => {
           this.packageData.version.data = data.latest_version;

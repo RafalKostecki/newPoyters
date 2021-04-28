@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import formsConfig from '../../assets/configs/formsConfig.json';
-import apiConfig from '../../assets/configs/apiConfig.json';
+import formsConfig from '../../assets/configs/forms.config.json';
+import mailConfig from '../../assets/configs/mail.config.json';
+import poytersApiConfig from '../../assets/configs/poytersApi.config.json';
 import { corsHeaders } from '../../scripts/auth/connectOptions';
 import { InfoPopupService } from '../../services/info-popup.service';
 
@@ -59,16 +60,16 @@ export class ContactFormComponent implements OnInit {
     this.submitted = true;
 
     if (this.contactForm.invalid) return;
-    this.infoPopupService.showInfo(this.sentMailInfo.pending, 1500);
+    this.infoPopupService.showInfoMessage(this.sentMailInfo.pending, 1500);
 
     const mail = {
-      from: `"${this.contactForm.value.email}" <no-reply@poyters.pl>`,
-      to: 'business@poyters.pl',
+      from: `"${this.contactForm.value.email}" <${mailConfig.mails.noreply}>`,
+      to: mailConfig.mails.noreply,
       subject: this.contactForm.value.topic,
       text: `Message from: ${this.contactForm.value.name}, ${this.contactForm.value.email}; ${this.contactForm.value.content}`
     }
 
-    fetch(`${apiConfig.poytersApiUrl}/mail/send`,
+    fetch(`${poytersApiConfig.url}/mail/send`,
       {
         method: 'POST',
         headers: corsHeaders,
@@ -77,16 +78,16 @@ export class ContactFormComponent implements OnInit {
       })
       .then((res) => {
         if (res.status === 200) {
-          this.infoPopupService.showInfo(this.sentMailInfo.ok, 4000);
+          this.infoPopupService.showInfoMessage(this.sentMailInfo.ok, 4000);
           
           this.submitted = false;
           this.contactForm.reset();
         } else {
-          this.infoPopupService.showInfo(this.sentMailInfo.error, 2000);
+          this.infoPopupService.showInfoMessage(this.sentMailInfo.error, 2000);
         }
       })
       .catch(() => {
-        this.infoPopupService.showInfo(this.sentMailInfo.error, 2000);
+        this.infoPopupService.showInfoMessage(this.sentMailInfo.error, 2000);
       })
   }
 

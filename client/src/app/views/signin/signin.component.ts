@@ -4,9 +4,7 @@ import { UserService } from '../../services/user.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { corsHeaders } from '../../scripts/auth/connectOptions';
-import apiConfig from '../../assets/configs/apiConfig.json';
-import { InfoPopupService } from '../../services/info-popup.service';
-import infoConfig from '../../assets/configs/infoConfig.json';
+import poytersApiConfig from '../../assets/configs/poytersApi.config.json';
 
 
 @Component({
@@ -25,8 +23,7 @@ export class SigninComponent implements OnInit {
     private formBuilder: FormBuilder, 
     private uiService: UiService,
     private userService: UserService,
-    private router: Router,
-    private infoPopupService: InfoPopupService
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -52,7 +49,7 @@ export class SigninComponent implements OnInit {
       password: this.signInForm.value.password
     }
 
-    fetch(`${apiConfig.poytersApiUrl}/auth/login`,
+    fetch(`${poytersApiConfig.url}/auth/login`,
       {
         method: 'POST',
         headers: corsHeaders,
@@ -60,7 +57,7 @@ export class SigninComponent implements OnInit {
         body: JSON.stringify(data)
       })
     .then(() => {
-      fetch(`${apiConfig.poytersApiUrl}/users/profile/`,
+      fetch(`${poytersApiConfig.url}/users/profile/`,
         {
           method: 'GET',
           headers: corsHeaders,
@@ -72,8 +69,6 @@ export class SigninComponent implements OnInit {
           this.signupMessage = "Wrong username or password";
         } else if (resJSON._id) {    
           this.userService.setUserData(resJSON);
-          this.infoPopupService.setIsActive(true);
-          this.infoPopupService.setInfoContent(infoConfig.messages.signin);
           this.router.navigate(['']);
         }
       })

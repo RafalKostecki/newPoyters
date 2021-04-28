@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { InfoPopupService } from '../../services/info-popup.service';
-import infoConfig from '../../assets/configs/infoConfig.json';
 import { KeycloakService } from 'keycloak-angular';
 import poytersAccountConfig from '../../assets/configs/poytersAccount.config.json'
 
@@ -38,8 +37,6 @@ export class ProfilPanelComponent {
 
   public logout() {
     this.keycloak.logout();
-    this.infoPopupService.setIsActive(true);
-    this.infoPopupService.setInfoContent(infoConfig.messages.logout);
   }
 
   public settings() {
