@@ -2,8 +2,7 @@ import { Component, Input } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { InfoPopupService } from '../../services/info-popup.service';
 import { KeycloakService } from 'keycloak-angular';
-import poytersAccountConfig from '../../assets/configs/poytersAccount.config.json'
-
+import poytersAccountConfig from '../../assets/configs/poytersAccount.config.json';
 
 @Component({
   selector: 'app-profile-panel',
@@ -35,8 +34,10 @@ export class ProfilPanelComponent {
     this.profileListIsOpen = !this.profileListIsOpen;
   }
 
-  public logout() {
-    this.keycloak.logout();
+  public async logout() {
+    await this.keycloak.logout();
+    console.log('here');
+    this.infoPopupService.showInfoMessage('fawfawfaw', 4000);
   }
 
   public settings() {

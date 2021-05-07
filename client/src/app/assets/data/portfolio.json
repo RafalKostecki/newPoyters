@@ -1,5 +1,16 @@
 [
 	{
+		"type": "SSO",
+		"title": "Poyters Account",
+		"link": "",
+		"githubLink": "",
+		"content": "The Poyters Account is an authentication service that enables authorize and authenticate a Poyters account (users).",
+		"technology": [
+			"Keycloak", "Nginx", "PostgreSQL"
+		],
+		"released": "25.04.2021"
+	},
+	{
 		"type": "Library",
 		"title": "Stella",
 		"link": "https://hex.pm/packages/stella",
@@ -23,12 +34,12 @@
 	},
 	{
 		"type": "Tool",
-		"title": "Angotia Catalogs",
+		"title": "Angotia Resources",
 		"link": "",
 		"githubLink": "",
 		"content": "Tool for game developers and users to help them find information such as maps, quests etc. Includes Admin Panel to manage exported data from Angotia tools.",
 		"technology": [
-			"TypeScript", "React", "Redux", "SCSS", "BEM", "Apollo", "Elixir", "Phoenix", "GraphQL", "Absinthe", "Guardian"
+			"TypeScript", "React", "Redux", "SCSS", "BEM", "Apollo", "Elixir", "Phoenix", "GraphQL", "Absinthe", "Poyters Account", "Stella"
 		],
 		"released": "17.05.2020"
 	},
@@ -50,20 +61,9 @@
 		"githubLink": "https://github.com/RafalKostecki/Poyters",
 		"content": "Single page application created in Angular with possibility to create Poyters Account - gives access to private Poyters products.",
 		"technology": [
-			"Angular 11", "BEM", "Stylus", "TypeScript", "Nest.js", "MongoDB", "JWT", "Passport.js"
+			"Angular 11", "BEM", "Stylus", "TypeScript", "Nest.js", "MongoDB", "Poyters Account"
 		],
 		"released": "23.07.2018"
-	},
-	{
-		"type": "Game",
-		"title": "HIPER JUMPER 3000",
-		"link": "https://github.com/RafalKostecki/hj3000",
-		"githubLink": "https://github.com/RafalKostecki/hj3000",
-		"content": "HIPER JUMPER 3000 arcade game with hand-coded physic engine and map creator.",
-		"technology": [
-			"JavaScript", "Pug", "Stylus", "LESS", "Electron"
-		],
-		"released": "21.04.2018"
 	},
 	{
 		"type": "Game",

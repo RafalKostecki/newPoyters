@@ -22,12 +22,4 @@ export class UserService {
   public setUserData(data: IUserData):void {
     this.userData.next(data);
   }
-
-  isLoggedIn():Observable<boolean> {
-     return this.http.get<any>(`${poytersApiConfig.url}/users/profile/`, this.httpOptions)
-      .pipe(map(response => {
-        if (response._id && response._id !== '') return true;
-        return false;
-    }));
-  }
 }

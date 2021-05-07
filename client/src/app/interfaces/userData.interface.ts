@@ -1,8 +1,7 @@
 export interface IUserData {
   _id: string
-  username: string
-  avatar?: string
-  role: string
-  mail: string
+  ssoId: string
+  avatar: string
+  description: string
   created: string
 }

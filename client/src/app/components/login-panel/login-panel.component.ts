@@ -7,7 +7,6 @@ import { KeycloakService } from 'keycloak-angular';
   styleUrls: ['./login-panel.component.styl']
 })
 export class LoginPanelComponent {
-
   constructor(
     private readonly keycloak: KeycloakService
   ) { }
@@ -16,8 +15,8 @@ export class LoginPanelComponent {
     await this.keycloak.login();
   }
 
-  public register() {
-    this.keycloak.register();
+  public async register() {
+    await this.keycloak.register();
   }
 
 }

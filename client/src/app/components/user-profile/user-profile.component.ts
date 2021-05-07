@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { InfoPopupService } from '../../services/info-popup.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -6,7 +7,9 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./user-profile.component.styl']
 })
 export class UserProfileComponent implements OnInit {
-  constructor() { }
+  constructor(
+    private infoPopupService: InfoPopupService
+  ) { }
 
   @Input() username: string;
   @Input() firstName: string;
@@ -16,6 +19,14 @@ export class UserProfileComponent implements OnInit {
   @Input() role: number;
   @Input() emailVerified: boolean;
 
-  ngOnInit(): void { }
+  private mailNotVerified = 'Your mail is not verified. Take a look at your mailbox';
+
+  ngOnInit(): void {
+    console.log('emailVerified', this.emailVerified)
+    console.log('created', this.created);
+    if (!this.emailVerified) {
+      this.infoPopupService.showInfoMessage(this.mailNotVerified, 10000);
+    }
+  }
 
 }

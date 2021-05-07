@@ -7,6 +7,9 @@ To set up a whole project (including API) at first, u need to `git clone` Poyter
 
 ## Changelog
 
+### Version 1.6.0 (planned June 2021)
+- POY-118, Add info message popups
+
 ### Version 1.5.0 (25 April 2021)
 - POY-115, Redesign a whole web app
 - POY-110, Connect to Poyters Account

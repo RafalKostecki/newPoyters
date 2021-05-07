@@ -1,10 +1,11 @@
 <main class="g-pageWrapper">
   <app-user-profile
+    *ngIf="isLoggedIn && userProfile"
     [username]="userProfile?.username"
     [firstName]="userProfile?.firstName"
     [lastName]="userProfile?.lastName"
     [mail]="userProfile?.email"
-    [created]="userProfile?.createdTimestamp"
+    [created]="userData?.created"
     [emailVerified]="userProfile?.emailVerified"
     role="userData.role"
   > </app-user-profile>
