@@ -9,6 +9,9 @@ To set up a whole project (including API) at first, u need to `git clone` Poyter
 
 ### Version 1.6.0 (planned June 2021)
 - POY-118, Add info message popups
+- POY-119, Update portfolio data, add Poyters Account project
+- POY-117, Add option to verify user mail
+- POY-114, Create Poyters User and add ability to set profile description
 
 ### Version 1.5.0 (25 April 2021)
 - POY-115, Redesign a whole web app

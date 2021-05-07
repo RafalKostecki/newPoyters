@@ -1,7 +1,7 @@
 
-import { Controller, Request, Body, Post, UseGuards, Get, Query } from '@nestjs/common';
-import { AuthGuard } from '@nestjs/passport';
+import { Controller, Request, Body, Post, Get, Param, Header } from '@nestjs/common';
 import { UsersService } from './users.service';
+import { Roles, AllowAnyRole, Unprotected, Public } from 'nest-keycloak-connect';
 
 @Controller('users')
 export class UsersController {
@@ -10,20 +10,26 @@ export class UsersController {
   ) {}
 
   @Post('create')
+  @Roles('user')
   async addUser(
-    @Body('username') username: string, 
-    @Body('password') password: string, 
-    @Body('mail') mail: string
+    @Body('ssoId') ssoId: string
   ) {
-    const generatedId = await this.usersService.insertUser(username, password, mail);
-
-    return {id: generatedId};
+    console.log('addUser', ssoId)
+    return await this.usersService.insertUser(ssoId);
   }
 
-  @UseGuards(AuthGuard('jwt'))
-  @Get('profile')
-  async userProfile(@Request() req) {
-    const user = await this.usersService.findOne(req?.user?.id);
+  @Get('profile/:ssoId')
+  @Roles('user')
+  async getUser(@Param('ssoId') ssoId) {
+    const user =  await this.usersService.getUser(ssoId);
+
+    console.log('user', user)
     return user;
+  }
+
+  @Get('all')
+  @Unprotected()
+  async allUsers() {
+    return await this.usersService.findAll();
   }
 }

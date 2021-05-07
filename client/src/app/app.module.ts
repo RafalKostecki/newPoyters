@@ -38,6 +38,7 @@ import { ProductGetComponent } from './components/product/product-get/product-ge
 import { InfoPopupComponent } from './components/info-popup/info-popup.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { AdminComponent } from './views/admin/admin.component';
+import { EditProfileComponent } from './views/edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { AdminComponent } from './views/admin/admin.component';
     ProductGetComponent,
     InfoPopupComponent,
     SliderComponent,
-    AdminComponent
+    AdminComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,

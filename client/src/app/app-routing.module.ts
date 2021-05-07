@@ -8,6 +8,7 @@ import { NotFoundComponent} from './views/not-found/not-found.component';
 import { ProductViewComponent} from './views/product-view/product-view.component';
 import { AuthGuard } from './guards/auth.guard';
 import { AdminComponent} from './views/admin/admin.component';
+import { EditProfileComponent } from './views/edit-profile/edit-profile.component';
 
 
 const routes: Routes = [
@@ -49,6 +50,14 @@ const routes: Routes = [
     component: ProductViewComponent,
     data: {
       productKey : 'stella'
+    }
+  },
+  {
+    path: 'edit-profile',
+    component: EditProfileComponent,
+    canActivate: [AuthGuard],
+    data: {
+      roles : ['user', 'admin']
     }
   },
   { 

@@ -3,71 +3,62 @@ import { Injectable, HttpException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { IUser } from './user.model';
-import { MailService } from '../mail/mail.service';
-import { Role } from '../../models/role.model';
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const bcrypt = require("bcrypt");
 
 
 @Injectable()
 export class UsersService {
   constructor(
-    @InjectModel('User') private readonly userModel: Model<IUser>,
-    private readonly mailService: MailService
+    @InjectModel('User') private readonly userModel: Model<IUser>
   ) { }
 
-  async insertUser(username: string, password: string, mail: string) {
-    const existingUsers = await this.userModel.find({username: username}).exec(); //todo: replace by this.findMany
+  async insertUser(ssoId: string) {
+    const existingUser = await this.findBySsoId(ssoId); //todo: replace by this.findMany
+
+    console.log('existingUser', existingUser)
     
-    if (existingUsers.length > 0) {
+    if (existingUser) {
       throw new HttpException({
         status: 409,
         error: 'User already exists',
       }, 409);
     } else {
-      await bcrypt.hash(password, 10, (err, hash) => {
-        if (err) {
-          throw new HttpException({
-            status: 500,
-            error: 'Internal error during crypting a password',
-          }, 500);
-        } else {
-          const newUser = new this.userModel({
-            username,
-            password: hash,
-            mail,
-            created: Date.now(),
-            role: Role.user
-          });
-          
-          newUser.save();
-
-          try {
-            this.mailService.send(
-              '"Poyters Team" <no-reply@poyters.pl>',
-              mail,
-              'Create a new account',
-              `Hey ${username}! U created ur a very new Poyters Account`
-            )
-          } catch (error) {
-            throw new HttpException({
-              status: 500,
-              error: 'Internal error during sending a mail',
-            }, 500);
-          }
-        }
+      const newUser = new this.userModel({
+        ssoId,
+        description: '',
+        avatar: '',
+        created: Date.now()
       });
+
+      newUser.save();
+
+      return newUser;
     }
   }
 
-  async findMany(username: string): Promise<IUser[] | undefined> {
-    const existingUsers = await this.userModel.find({username: username}).exec();
-    return existingUsers;
-  }
+  async getUser(ssoId: string): Promise<IUser> {
+    const user = await this.findBySsoId(ssoId);
 
-  async findOne(id: string): Promise<IUser | undefined> {
-    const user = await this.userModel.findById(id).exec();
+    console.log('get user', user);
+
+    if (!user) {
+      throw new HttpException({
+        status: 404,
+        error: 'User not found',
+      }, 404);
+    }
 
     return user;
+  };
+
+  private async findBySsoId(ssoId: string): Promise<IUser | undefined> {
+    return this.userModel.findOne({ssoId: ssoId}).exec();
+  }
+
+  private async findOne(id: string): Promise<IUser | undefined> {
+    return this.userModel.findById(id).exec();
+  }
+
+  async findAll(): Promise<IUser[]> {
+    return await this.userModel.find().exec();
   }
 }

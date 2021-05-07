@@ -1,44 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { UiService } from '../../services/ui.service';
-import { IUserData } from '../../interfaces/userData.interface';
-import { UserService } from '../../services/user.service';
-import { KeycloakService } from 'keycloak-angular';
-import { KeycloakProfile } from 'keycloak-js';
 
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.styl']
+  selector: 'app-edit-profile',
+  templateUrl: './edit-profile.component.html',
+  styleUrls: ['./edit-profile.component.styl']
 })
-export class ProfileComponent implements OnInit {
+export class EditProfileComponent implements OnInit {
 
-  private categoryName: string = "Profile";
-  public userData;
-  public portfolioProjects: Object;
-  public isLoggedIn = false;
-  public userProfile: KeycloakProfile | null = null;
-  public token: string;
-
+  private categoryName: string = "Edit profile";
   constructor(
-    private data: UiService,
-    private readonly keycloak: KeycloakService,
-    private userService: UserService
+    private data: UiService
   ) {}
 
   
-  public async ngOnInit() {
+  ngOnInit() {
     this.data.changeCategory(this.categoryName);
-    this.userService.userData.subscribe(data => {
-      console.log('data', data)
-      this.userData = data
-    });
-    this.isLoggedIn = await this.keycloak.isLoggedIn();
-
-    if (this.isLoggedIn) {
-      this.userProfile = await this.keycloak.loadUserProfile();
-      console.log('userProfile', this.userProfile);
-    }
   }
 
 }
