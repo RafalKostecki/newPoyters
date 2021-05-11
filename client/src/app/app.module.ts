@@ -43,6 +43,7 @@ import { OfferComponent } from './views/offer/offer.component';
 import { OfferDevelopmentComponent } from './components/offer/offer-development/offer-development.component';
 import { OfferConsultingComponent } from './components/offer/offer-consulting/offer-consulting.component';
 import { OfferMoreComponent } from './components/offer/offer-more/offer-more.component';
+import { GetButtonComponent } from './components/buttons/get-button/get-button.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,8 @@ import { OfferMoreComponent } from './components/offer/offer-more/offer-more.com
     OfferComponent,
     OfferDevelopmentComponent,
     OfferConsultingComponent,
-    OfferMoreComponent
+    OfferMoreComponent,
+    GetButtonComponent
   ],
   imports: [
     BrowserModule,
