@@ -11,10 +11,9 @@ export class UsersController {
 
   @Post('create')
   @Roles('user')
-  async addUser(
-    @Body('ssoId') ssoId: string
-  ) {
-    return await this.usersService.insertUser(ssoId);
+  async addUser(@Headers() headers) {
+    const token = headers.authorization;
+    return await this.usersService.insertUser(token);
   }
 
   @Get('profile')

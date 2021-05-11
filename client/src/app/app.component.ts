@@ -45,13 +45,13 @@ export class AppComponent implements OnInit {
 
     if (!this.userData) {
       console.log('start fetching user data')
-      const fetchedUserData = await this.fetchUserData(userId);
+      const fetchedUserData = await this.fetchUserData();
       console.log('fetchedUserData', fetchedUserData)
       this.userService.setUserData(fetchedUserData);
     }
   }
 
-  private async fetchUserData(ssoId: string): Promise<IUserData | null> {
+  private async fetchUserData(): Promise<IUserData | null> {
     const apiUrl = `http://localhost:3000/users/profile`;
 
     try {
@@ -65,7 +65,7 @@ export class AppComponent implements OnInit {
 
       if (userData.status === 404) {
         console.log('creating user')
-        return await this.createUser(ssoId);
+        return await this.createUser();
       }
 
       return userData as IUserData;
@@ -76,10 +76,7 @@ export class AppComponent implements OnInit {
     }
   }
 
-  private async createUser(ssoId: string): Promise<IUserData | null> {
-    const newUserData = JSON.stringify({ ssoId });
-    console.log('newUserData', newUserData);
-
+  private async createUser(): Promise<IUserData | null> {
     try {
       const response = await fetch(
         `http://localhost:3000/users/create/`,
@@ -88,10 +85,10 @@ export class AppComponent implements OnInit {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${this.token}`
-          },
-          body: newUserData
+          }
         }
       );
+      
       const userData = await response.json() as IUserData;
 
       console.log('created user', userData)

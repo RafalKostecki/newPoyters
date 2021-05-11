@@ -13,10 +13,9 @@ export class UsersService {
     private authenticationService: AuthenticationService,
   ) { }
 
-  async insertUser(ssoId: string) {
-    const existingUser = await this.findBySsoId(ssoId); //todo: replace by this.findMany
-
-    console.log('existingUser', existingUser)
+  async insertUser(token: string) {
+    const ssoId = await this.authenticationService.authenticate(token);
+    const existingUser = await this.findBySsoId(ssoId);
     
     if (existingUser) {
       throw new HttpException({
@@ -39,10 +38,7 @@ export class UsersService {
 
   async getUser(token: string): Promise<IUser> {
     const ssoId = await this.authenticationService.authenticate(token);
-    console.log('ssoId', ssoId);
     const user = await this.findBySsoId(ssoId);
-
-    console.log('get user', user);
 
     if (!user) {
       throw new HttpException({
@@ -56,10 +52,6 @@ export class UsersService {
 
   private async findBySsoId(ssoId: string): Promise<IUser | undefined> {
     return this.userModel.findOne({ssoId: ssoId}).exec();
-  }
-
-  private async findOne(id: string): Promise<IUser | undefined> {
-    return this.userModel.findById(id).exec();
   }
 
   async findAll(): Promise<IUser[]> {
