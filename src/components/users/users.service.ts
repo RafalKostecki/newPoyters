@@ -3,12 +3,14 @@ import { Injectable, HttpException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { IUser } from './user.model';
+import { AuthenticationService } from '../authentication/authentication.service';
 
 
 @Injectable()
 export class UsersService {
   constructor(
-    @InjectModel('User') private readonly userModel: Model<IUser>
+    @InjectModel('User') private readonly userModel: Model<IUser>,
+    private authenticationService: AuthenticationService,
   ) { }
 
   async insertUser(ssoId: string) {
@@ -35,7 +37,9 @@ export class UsersService {
     }
   }
 
-  async getUser(ssoId: string): Promise<IUser> {
+  async getUser(token: string): Promise<IUser> {
+    const ssoId = await this.authenticationService.authenticate(token);
+    console.log('ssoId', ssoId);
     const user = await this.findBySsoId(ssoId);
 
     console.log('get user', user);

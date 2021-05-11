@@ -20,7 +20,9 @@ import { NewsService } from './components/news/news.service';
 import { MailController } from './components/mail/mail.controller';
 import { MailService } from './components/mail/mail.service';
 import { MailModule } from './components/mail/mail.module';
-import * as keycloakConfig from './assets/configs/keycloak.config.json';
+import { AuthenticationService } from './components/authentication/authentication.service';
+import { AuthenticationModule } from './components/authentication/authentication.module';
+import * as ssoConfig from './assets/configs/sso.config.json';
 
 
 const accessString = 'mongodb+srv://new-test-user:9OFB838GLJY0h1vx@cluster0-amydc.mongodb.net/test?retryWrites=true&w=majority';
@@ -32,7 +34,8 @@ const accessString = 'mongodb+srv://new-test-user:9OFB838GLJY0h1vx@cluster0-amyd
     InfoModule,
     MailModule,
     NewsModule,
-    KeycloakConnectModule.register(keycloakConfig),
+    AuthenticationModule,
+    KeycloakConnectModule.register(ssoConfig),
     ConfigModule.forRoot({
       envFilePath: ['./config/.development.env', './config/.prod.env'],
     })
@@ -59,7 +62,8 @@ const accessString = 'mongodb+srv://new-test-user:9OFB838GLJY0h1vx@cluster0-amyd
     AppService,
     InfoService,
     MailService,
-    NewsService
+    NewsService,
+    AuthenticationService
   ],
 })
 export class AppModule {}

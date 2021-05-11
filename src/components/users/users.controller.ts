@@ -1,5 +1,5 @@
 
-import { Controller, Request, Body, Post, Get, Param, Header } from '@nestjs/common';
+import { Controller, Request, Body, Post, Get, Param, Headers } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { Roles, AllowAnyRole, Unprotected, Public } from 'nest-keycloak-connect';
 
@@ -14,16 +14,14 @@ export class UsersController {
   async addUser(
     @Body('ssoId') ssoId: string
   ) {
-    console.log('addUser', ssoId)
     return await this.usersService.insertUser(ssoId);
   }
 
-  @Get('profile/:ssoId')
+  @Get('profile')
   @Roles('user')
-  async getUser(@Param('ssoId') ssoId) {
-    const user =  await this.usersService.getUser(ssoId);
-
-    console.log('user', user)
+  async getUser(@Headers() headers) {
+    const token = headers.authorization;
+    const user =  await this.usersService.getUser(token);
     return user;
   }
 
