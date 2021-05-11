@@ -31,7 +31,7 @@
     "title": "Download game",
     "description": "It's really happens! Kostek \"Urodziny\" game is completly for free! The promotion is limited in time!",
     "buttonText": "download",
-    "address": "https://poyters.pl/assets/uploads/kostek.exe"
+    "address": "https://poyters.pl/app/assets/uploads/kostek.exe"
   },
   "requirements": {
     "min": [
