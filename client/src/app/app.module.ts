@@ -41,6 +41,8 @@ import { AdminComponent } from './views/admin/admin.component';
 import { EditProfileComponent } from './views/edit-profile/edit-profile.component';
 import { OfferComponent } from './views/offer/offer.component';
 import { OfferDevelopmentComponent } from './components/offer/offer-development/offer-development.component';
+import { OfferConsultingComponent } from './components/offer/offer-consulting/offer-consulting.component';
+import { OfferMoreComponent } from './components/offer/offer-more/offer-more.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +78,9 @@ import { OfferDevelopmentComponent } from './components/offer/offer-development/
     AdminComponent,
     EditProfileComponent,
     OfferComponent,
-    OfferDevelopmentComponent
+    OfferDevelopmentComponent,
+    OfferConsultingComponent,
+    OfferMoreComponent
   ],
   imports: [
     BrowserModule,
