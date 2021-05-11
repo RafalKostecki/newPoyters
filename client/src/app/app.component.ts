@@ -36,10 +36,12 @@ export class AppComponent implements OnInit {
     this.userService.userData.subscribe(data => this.userData = data);
 
     const userId = await this.keycloak.getKeycloakInstance().subject;
+    const loadUserInfo = await this.keycloak.getKeycloakInstance().loadUserInfo();
     this.token = await this.keycloak.getToken();
     console.log('token', this.token);
     console.log('userId', userId);
     console.log('this.userData', this.userData);
+    console.log('loadUserInfo', loadUserInfo)
 
     if (!this.userData) {
       console.log('start fetching user data')
@@ -50,7 +52,7 @@ export class AppComponent implements OnInit {
   }
 
   private async fetchUserData(ssoId: string): Promise<IUserData | null> {
-    const apiUrl = `http://localhost:3000/users/profile/${ssoId}`;
+    const apiUrl = `http://localhost:3000/users/profile`;
 
     try {
       const response = await fetch(apiUrl, {

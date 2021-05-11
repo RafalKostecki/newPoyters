@@ -39,6 +39,8 @@ import { InfoPopupComponent } from './components/info-popup/info-popup.component
 import { SliderComponent } from './components/slider/slider.component';
 import { AdminComponent } from './views/admin/admin.component';
 import { EditProfileComponent } from './views/edit-profile/edit-profile.component';
+import { OfferComponent } from './views/offer/offer.component';
+import { OfferDevelopmentComponent } from './components/offer/offer-development/offer-development.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +74,9 @@ import { EditProfileComponent } from './views/edit-profile/edit-profile.componen
     InfoPopupComponent,
     SliderComponent,
     AdminComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    OfferComponent,
+    OfferDevelopmentComponent
   ],
   imports: [
     BrowserModule,

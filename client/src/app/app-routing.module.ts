@@ -9,6 +9,7 @@ import { ProductViewComponent} from './views/product-view/product-view.component
 import { AuthGuard } from './guards/auth.guard';
 import { AdminComponent} from './views/admin/admin.component';
 import { EditProfileComponent } from './views/edit-profile/edit-profile.component';
+import { OfferComponent } from './views/offer/offer.component';
 
 
 const routes: Routes = [
@@ -25,10 +26,18 @@ const routes: Routes = [
     component: ContactComponent
   },
   {
+    path: 'offer',
+    component: OfferComponent
+  },
+  {
     path: 'profile',
     component: ProfileComponent,
-    canActivate: [AuthGuard],
-    data: {authRedirect: '/signin'}
+    canActivate: [AuthGuard]
+  },
+  { 
+    path: 'login',
+    redirectTo: '/profile',
+    pathMatch: 'full'
   },
   {
     path: 'admin',

@@ -1,0 +1,62 @@
+.g-offerTile {
+  display: flex
+  flex-direction: column
+  position: relative
+  padding: 40px
+
+  background-color: shadow4
+
+  @media (max-width: 650px) {
+    flex-direction: column
+    padding: 20px
+  }
+
+  &__headers {
+    margin-bottom: 30px
+
+    text-align: center
+  
+    & h5 { 
+      text-transform: lowercase
+      letter-spacing: 2px
+      color: colorOfDecorations
+    }
+  }
+
+  &__description {
+    margin-bottom: 30px
+    
+    a {
+      color: colorOfDecorations !important
+      font-weight: 400
+      letter-spacing: 1px
+      transition: 200ms ease-in-out
+
+      &:hover {
+        color: fontColor2   
+      }
+    }
+  }
+
+  & ul {
+    margin: 5px 0 15px 0
+  }
+}
+
+.g-offerShortInfo {
+  display: flex
+  flex-direction: column
+
+  
+
+  &__content {
+    display: flex
+    flex-direction: column
+    flex-wrap: nowrap
+    margin-top: 20px
+
+    @media (max-width: 650px) {
+      flex-direction: column
+    }
+  }
+}
