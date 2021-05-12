@@ -1,0 +1,27 @@
+<article class="techStack">
+  <header class="techStack__headers">
+    <h2> Tech stack </h2>
+    <h5> find out what we can do </h5>
+  </header>
+  <section class="techStack__description">
+    <p>
+      In our company, <b>we place great emphasis on being up to date</b> with technology. We are in a tricky "learning mode"; improve our skills and learn how to create amazing, huge, fast and scalable web applications. We are constantly <b>looking for new, better solutions</b> and we wonder how we can achieve our goals with the latest Tech World ideas. 
+    </p>
+  </section>
+  <section class="techStack__stack">
+    <h4> Frontend </h4>
+    <app-technologies-box
+      [technologies]="technologiesFrontend"
+    ></app-technologies-box>
+
+    <h4> Backend </h4>
+    <app-technologies-box
+      [technologies]="technologiesBackend"
+    ></app-technologies-box>
+
+    <h4> Other </h4>
+    <app-technologies-box
+      [technologies]="technologiesOther"
+    ></app-technologies-box>
+  </section>
+</article>

@@ -12,11 +12,9 @@
       {{content}}
     </main>
     <footer class="technology">
-      <div *ngFor="let technology of technologies">
-        <div class="technology__box technology__box--style">
-          {{technology}}
-        </div>
-      </div>
+      <app-technologies-box
+        [technologies]="technologies"
+      ></app-technologies-box>
     </footer>
     <aside class="date">
       Release date: {{date}}

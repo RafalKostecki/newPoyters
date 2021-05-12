@@ -1,0 +1,37 @@
+<main class="g-pageWrapper">
+  <product-introduction
+    [name]="product.data.intro.name"
+    [type]="product.data.intro.type"
+    [introDescription]="product.data.intro.desc"
+    [icon]="product.data.intro.iconPath"
+  > </product-introduction>
+  <app-slider
+    *ngIf="product.data.slider"
+    [slides]="product.data.slider"
+  ></app-slider>
+  <product-get
+    *ngIf="product.data.get"
+    [title]="product.data.get.title"
+    [buttonText]="product.data.get.buttonText"
+    [description]="product.data.get.description"
+    [type]="product.data.get.type"
+    [address]="product.data.get.address"
+  > </product-get>
+  <div class="boxesWrapper">
+    <product-system-requirements
+      *ngIf="product.data.requirements"
+      [min]="product.data.requirements.min"
+      [rec]="product.data.requirements.recommended"
+    > </product-system-requirements>
+
+    <product-details
+      [details]="product.data.details"
+      [package]="product.data.package"
+    > </product-details>
+
+    <product-links
+      *ngIf="product.data.links"
+      [links]="product.data.links"
+    > </product-links>
+  </div>
+</main>

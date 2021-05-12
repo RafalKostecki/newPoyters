@@ -1,5 +1,5 @@
 <main class="g-pageWrapper">
-  <app-user-profile
+  <profile-card
     *ngIf="isLoggedIn && userProfile"
     [username]="userProfile?.username"
     [firstName]="userProfile?.firstName"
@@ -8,5 +8,5 @@
     [created]="userData?.created"
     [emailVerified]="userProfile?.emailVerified"
     role="userData.role"
-  > </app-user-profile>
+  > </profile-card>
 </main>

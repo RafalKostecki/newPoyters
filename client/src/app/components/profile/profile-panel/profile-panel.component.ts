@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { UserService } from '../../services/user.service';
-import { InfoPopupService } from '../../services/info-popup.service';
+import { UserService } from '../../../services/user.service';
+import { InfoPopupService } from '../../../services/info-popup.service';
 import { KeycloakService } from 'keycloak-angular';
-import poytersAccountConfig from '../../assets/configs/poytersAccount.config.json';
+import poytersAccountConfig from '../../../assets/configs/poytersAccount.config.json';
 
 @Component({
   selector: 'app-profile-panel',

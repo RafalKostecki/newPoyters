@@ -4,11 +4,11 @@ import { UiService } from '../../services/ui.service';
 import { productsRoot } from '../../assets/data/products/productsRoot';
 
 @Component({
-  selector: 'app-product-view',
-  templateUrl: './product-view.component.html',
-  styleUrls: ['./product-view.component.styl']
+  selector: 'app-product',
+  templateUrl: './product.component.html',
+  styleUrls: ['./product.component.styl']
 })
-export class ProductViewComponent implements OnInit {
+export class ProductComponent implements OnInit {
 
   constructor(
     private data: UiService,
@@ -16,15 +16,17 @@ export class ProductViewComponent implements OnInit {
   ) { }
 
   private sub;
-  public productData;
+  public product;
 
 
   ngOnInit() {
     this.sub = this.route
       .data
-      .subscribe(v => this.productData = productsRoot[v.productKey]);
+      .subscribe(v => {
+        this.product= productsRoot[v.productKey]
+      });
 
-    this.data.changeCategory(this.productData.categoryName)
+    this.data.changeCategory(this.product.categoryName)
   }
 
   ngOnDestroy() {

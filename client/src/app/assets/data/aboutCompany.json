@@ -1,0 +1,36 @@
+{
+  "stack": {
+    "frontend": [
+      "JavaScript",
+      "TypeScript",
+      "Electron",
+      "React",
+      "Redux",
+      "Next",
+      "Gatsby",
+      "Angular",
+      "RxJs",
+      "NgRx",
+      "Universal",
+      "Elixir",
+      "Phoenix"
+    ],
+    "backend": [
+      "Node",
+      "Express",
+      "Nest",
+      "Festify",
+      "MongoDB",
+      "PostgreSQL"
+    ],
+    "other": [
+      "REST",
+      "GraphQL",
+      "Keycloak",
+      "Jenkins",
+      "CI/CD",
+      "Linux",
+      "Docker"
+    ]
+  }
+}

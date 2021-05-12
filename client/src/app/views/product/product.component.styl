@@ -1,0 +1,16 @@
+.boxesWrapper {
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-between
+
+  & > * {
+    flex-basis: 50%
+    max-width: calc(50% - 10px)
+    box-sizing: border-box
+
+    @media (max-width: 750px) {
+      flex-basis: 100%
+      max-width: none
+    }
+  }  
+}

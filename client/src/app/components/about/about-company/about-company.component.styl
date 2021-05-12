@@ -1,0 +1,55 @@
+@import '../../../assets/styles/index.styl'
+
+.aboutCompany {
+  display: flex
+  flex-direction: column
+  padding: 40px
+  box-sizing: border-box
+
+  background-color: shadow4
+
+  &__headers {
+    text-align: center
+  
+    & h2 { 
+      txt(30px, 2px, 400, uppercase, colorOfDecorations)
+    }
+  }
+
+  &__desc {
+    & p {
+      
+    }
+  
+    & h4 {
+      txt(22px, 3px, 200, uppercase, inherit)
+    }
+  }
+}
+
+.sectionParagraph {
+  display: flex
+  flex-direction: row
+  flex-wrap: nowrap
+  justify-content: space-between
+  margin-top: 40px;
+
+  &__image {
+    display: flex
+    justify-content: center
+    align-items: center
+    margin: 0 30px
+
+    & img {
+      max-width: 256px  
+    }
+
+    &--rotate20 {
+       margin: 0
+      transform: rotate(20deg) translate(-20px, -10px)
+    }
+  }
+
+  &__desc {
+  }
+}

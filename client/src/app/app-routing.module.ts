@@ -1,21 +1,26 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
 import { HomeComponent } from './views/home/home.component';
 import { PortfolioComponent } from './views/portfolio/portfolio.component';
 import { ContactComponent } from './views/contact/contact.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { NotFoundComponent} from './views/not-found/not-found.component';
-import { ProductViewComponent} from './views/product-view/product-view.component';
-import { AuthGuard } from './guards/auth.guard';
+import { ProductComponent } from './views/product/product.component';
 import { AdminComponent} from './views/admin/admin.component';
 import { EditProfileComponent } from './views/edit-profile/edit-profile.component';
 import { OfferComponent } from './views/offer/offer.component';
+import { AboutComponent } from './views/about/about.component';
 
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent
+  },
+  {
+    path: 'about',
+    component: AboutComponent
   },
   {
     path: 'portfolio',
@@ -49,14 +54,14 @@ const routes: Routes = [
   },
   {
     path: 'kostek-urodziny',
-    component: ProductViewComponent,
+    component: ProductComponent,
     data: {
       productKey : 'kosUrodziny'
     }
   },
   {
     path: 'stella',
-    component: ProductViewComponent,
+    component: ProductComponent,
     data: {
       productKey : 'stella'
     }

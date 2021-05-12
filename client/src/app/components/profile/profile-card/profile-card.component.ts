@@ -1,12 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { InfoPopupService } from '../../services/info-popup.service';
+import { InfoPopupService } from '../../../services/info-popup.service';
 
 @Component({
-  selector: 'app-user-profile',
-  templateUrl: './user-profile.component.html',
-  styleUrls: ['./user-profile.component.styl']
+  selector: 'profile-card',
+  templateUrl: './profile-card.component.html',
+  styleUrls: ['./profile-card.component.styl']
 })
-export class UserProfileComponent implements OnInit {
+export class ProfileCardComponent implements OnInit {
   constructor(
     private infoPopupService: InfoPopupService
   ) { }
