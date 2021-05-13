@@ -3,7 +3,7 @@
     "name": "Stella",
     "type": "library",
     "desc": "Enormous rapid, fully tested with versioned and automatically tested code samples documentation Elixir library. The main focus of this project is to add to Elixir implementations of the most usefull and the most used algorithms (like graph and sort alogs) and data structures (trees, queues etc) with a pinch of the missing math modules.",
-    "iconPath": "./app/assets/media/stella.png"
+    "iconPath": "./app/assets/media/stella-long-192x96.png"
   },
   "details": [
     {

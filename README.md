@@ -14,6 +14,9 @@ To set up a whole project (including API) at first, u need to `git clone` Poyter
 - POY-114, Create Poyters User and add ability to set profile description
 - POY-93, Create offer view
 - POY-124, Separate get button as component
+- POY-95, Create about company view
+- POY-120, Optimize projects images and videos
+- POY-126 Change Stella logo
 
 ### Version 1.5.0 (25 April 2021)
 - POY-115, Redesign a whole web app

@@ -1,6 +1,6 @@
 [
 	{
-		"image": "./app/assets/media/stella.png",
+		"image": "./app/assets/media/stella-long-192x96.png",
 		"internalLink": "/stella",
 		"title": "Stella",
 		"content": "Library providing implementations of the most famous algorithms, data structures and math functions for Elixir`s projects."

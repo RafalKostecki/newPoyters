@@ -17,11 +17,6 @@
 
   &__desc, &__img {
     flex: 1
-    max-width: calc(55% - 70px)
-
-    @media (max-width: 1000px) {
-      max-width: none
-    }
   }
 
   &__desc {
@@ -40,8 +35,13 @@
   }
 
   &__img {
+    max-width: 40%
+    margin-right: 20px
+
     @media (max-width: 1000px) {
+      margin-right: 0
       margin-bottom: 25px
+      max-width: none
     }
 
     & > img {
