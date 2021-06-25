@@ -9,17 +9,17 @@
       "Next",
       "Gatsby",
       "Angular",
-      "RxJs",
+      "RxJS",
       "NgRx",
-      "Universal",
-      "Elixir",
-      "Phoenix"
+      "Universal"
     ],
     "backend": [
       "Node",
       "Express",
       "Nest",
-      "Festify",
+      "Fastify",
+      "Elixir",
+      "Phoenix",
       "MongoDB",
       "PostgreSQL"
     ],

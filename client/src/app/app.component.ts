@@ -3,6 +3,7 @@ import { KeycloakService } from 'keycloak-angular';
 import { KeycloakProfile } from 'keycloak-js';
 import { UserService } from './services/user.service';
 import { IUserData } from './interfaces/userData.interface';
+import poytersApiConfig from './assets/configs/poytersApi.config.json';
 
 @Component({
   selector: 'app-root',
@@ -34,25 +35,16 @@ export class AppComponent implements OnInit {
 
   private async loadUserData() {
     this.userService.userData.subscribe(data => this.userData = data);
-
-    const userId = await this.keycloak.getKeycloakInstance().subject;
-    const loadUserInfo = await this.keycloak.getKeycloakInstance().loadUserInfo();
     this.token = await this.keycloak.getToken();
-    console.log('token', this.token);
-    console.log('userId', userId);
-    console.log('this.userData', this.userData);
-    console.log('loadUserInfo', loadUserInfo)
 
     if (!this.userData) {
-      console.log('start fetching user data')
       const fetchedUserData = await this.fetchUserData();
-      console.log('fetchedUserData', fetchedUserData)
       this.userService.setUserData(fetchedUserData);
     }
   }
 
   private async fetchUserData(): Promise<IUserData | null> {
-    const apiUrl = `http://localhost:3000/users/profile`;
+    const apiUrl = `${poytersApiConfig.url}/users/profile`;
 
     try {
       const response = await fetch(apiUrl, {
@@ -64,13 +56,11 @@ export class AppComponent implements OnInit {
       const userData = await response.json();
 
       if (userData.status === 404) {
-        console.log('creating user')
         return await this.createUser();
       }
 
       return userData as IUserData;
     } catch (error) {
-      console.log('error', error)
 
       return null;
     }
@@ -79,7 +69,7 @@ export class AppComponent implements OnInit {
   private async createUser(): Promise<IUserData | null> {
     try {
       const response = await fetch(
-        `http://localhost:3000/users/create/`,
+        `${poytersApiConfig.url}/users/create/`,
         {
           method: 'POST',
           headers: {
@@ -91,10 +81,8 @@ export class AppComponent implements OnInit {
       
       const userData = await response.json() as IUserData;
 
-      console.log('created user', userData)
       return userData;
     } catch (error) {
-      console.log('create error', error)
       return null;
     }
   }

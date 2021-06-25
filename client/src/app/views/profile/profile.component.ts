@@ -30,14 +30,12 @@ export class ProfileComponent implements OnInit {
   public async ngOnInit() {
     this.data.changeCategory(this.categoryName);
     this.userService.userData.subscribe(data => {
-      console.log('data', data)
       this.userData = data
     });
     this.isLoggedIn = await this.keycloak.isLoggedIn();
 
     if (this.isLoggedIn) {
       this.userProfile = await this.keycloak.loadUserProfile();
-      console.log('userProfile', this.userProfile);
     }
   }
 

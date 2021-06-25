@@ -1,17 +1,17 @@
 import { KeycloakService } from 'keycloak-angular';
-import poytersAccountConfig from '../../assets/configs/poytersAccount.config.json';
+import ssoConfig from '../../assets/configs/sso.config.json';
 
 export function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
     keycloak.init({
       config: {
-        url: poytersAccountConfig.authServerUrl,
-        realm: poytersAccountConfig.realm,
-        clientId: poytersAccountConfig.resource,
+        url: ssoConfig.authServerUrl,
+        realm: ssoConfig.realm,
+        clientId: ssoConfig.resource,
       },
       initOptions: {
         onLoad: 'check-sso',
-        checkLoginIframe: poytersAccountConfig.checkLoginIframe,
+        checkLoginIframe: ssoConfig.checkLoginIframe,
       },
     });
 }

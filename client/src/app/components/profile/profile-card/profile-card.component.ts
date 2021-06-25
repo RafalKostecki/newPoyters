@@ -22,8 +22,6 @@ export class ProfileCardComponent implements OnInit {
   private mailNotVerified = 'Your mail is not verified. Take a look at your mailbox';
 
   ngOnInit(): void {
-    console.log('emailVerified', this.emailVerified)
-    console.log('created', this.created);
     if (!this.emailVerified) {
       this.infoPopupService.showInfoMessage(this.mailNotVerified, 10000);
     }

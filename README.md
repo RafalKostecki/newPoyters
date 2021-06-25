@@ -7,6 +7,11 @@ To set up a whole project (including API) at first, u need to `git clone` Poyter
 
 ## Changelog
 
+### Version 1.7.0 (planned December 2021)
+- POY-131, Update Poyters Company technology stack
+- POY-128, fix differences in margins at offer and about views
+- POY-134, Update projects urls
+
 ### Version 1.6.0 (18 May 2021)
 - POY-118, Add info message popups
 - POY-119, Update portfolio data, add Poyters Account project

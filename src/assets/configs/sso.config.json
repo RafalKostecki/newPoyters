@@ -2,5 +2,5 @@
   "authServerUrl": "http://localhost:8080/auth",
   "realm": "poyters-account",
   "clientId": "poyters-api",
-  "secret": "b60843de-080d-4817-851b-d3d0a706bf19"
+  "secret": "febda90a-71cf-4aef-b79e-7f6ccb08ad44"
 }

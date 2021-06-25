@@ -14,7 +14,7 @@
 		"type": "Library",
 		"title": "Stella",
 		"link": "https://hex.pm/packages/stella",
-		"githubLink": "https://github.com/RafalKostecki/stella",
+		"githubLink": "https://github.com/Poyters/stella",
 		"content": "Elixir library providing implementations of the most famous algorithms, data structures and math functions.",
 		"technology": [
 			"Elixir", "Math", "Algorithms", "Data structures"

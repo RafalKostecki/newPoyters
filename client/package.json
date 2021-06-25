@@ -1,6 +1,6 @@
 {
-  "name": "Poyters",
-  "version": "1.6.0",
+  "name": "poyters",
+  "version": "1.7.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

@@ -1,8 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { UserService } from '../../../services/user.service';
-import { InfoPopupService } from '../../../services/info-popup.service';
 import { KeycloakService } from 'keycloak-angular';
-import poytersAccountConfig from '../../../assets/configs/poytersAccount.config.json';
+import ssoConfig from '../../../assets/configs/sso.config.json';
 
 @Component({
   selector: 'app-profile-panel',
@@ -18,7 +17,6 @@ export class ProfilPanelComponent {
 
   constructor(
     private userService: UserService,
-    private infoPopupService: InfoPopupService,
     private readonly keycloak: KeycloakService
   ) { }
 
@@ -36,13 +34,11 @@ export class ProfilPanelComponent {
 
   public async logout() {
     await this.keycloak.logout();
-    console.log('here');
-    this.infoPopupService.showInfoMessage('fawfawfaw', 4000);
   }
 
   public settings() {
     window.open(
-      `${poytersAccountConfig.authServerUrl}/realms/poyters-account/account?refereer=poyters`,
+      `${ssoConfig.authServerUrl}/realms/${ssoConfig.realm}/account?refereer=poyters`,
       '_blank'
     );
   }
